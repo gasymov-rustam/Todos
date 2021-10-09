@@ -29,22 +29,25 @@ function reducer(state, action) {
       return action.payload;
     }
     case "ADD": {
-      return [...state, action.payload];
+      // return [...state, action.payload];
+      const newState = [...state, action.payload].sort(
+        (a, b) => a.title.localeCompare(b.title) || a.createdAt - b.createdAt
+      );
+      return newState;
     }
     case "NEXT_STATUS": {
       const newState = [...state];
       const todoIdx = newState.findIndex((todo) => todo.id === action.payload.id);
       newState.splice(todoIdx, 1, action.payload);
+      newState.sort((a, b) => a.title.localeCompare(b.title) || a.createdAt - b.createdAt);
       return newState;
     }
     case "DELETE": {
       const newState = [...state];
       const todoIdx = newState.findIndex((todo) => todo.id === action.payload);
       newState.splice(todoIdx, 1);
+      newState.sort((a, b) => a.title.localeCompare(b.title) || a.createdAt - b.createdAt);
       return newState;
-    }
-    case "FILTER": {
-      return action.payload;
     }
     default: {
       throw new Error(`Wrong action.type! Received type is-->> ${action.type}`);

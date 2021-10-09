@@ -7,7 +7,10 @@ function App() {
     <div className="container">
       <h1 className="title">Task Manager</h1>
       <Todos status="0" />
+      <Todos status="1" />
+      <Todos status="2" />
       <AddTodo />
+      {/* {console.log(Todos)} */}
     </div>
   );
 }

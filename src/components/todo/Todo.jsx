@@ -38,11 +38,6 @@ export default function Todo({ todo }) {
           {todo.status === 0 ? "in Work" : todo.status === 1 ? "in Done" : "Delete"}
         </button>
       }
-      {/* {todo.status < 2 && (
-        <button className={cn.btn} onClick={setNextStatus}>
-          Next status
-        </button>
-      )} */}
     </div>
   );
 }

@@ -3,4 +3,13 @@
   justify-content: flex-start;
   gap: 20px;
   overflow-x: auto;
+  margin-bottom: 20px;
+  min-height: 150px;
+}
+
+.partName {
+  font-size: 2.2em;
+  text-align: center;
+  color: orangered;
+  margin: 30px;
 }
