@@ -1,0 +1,40 @@
+.wrapper {
+  padding: 8px 16px;
+  width: 200px;
+  border: 1px solid rgb(196, 107, 107);
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  border-radius: 10px;
+  background: rgb(197, 243, 204);
+  margin-bottom: 20px;
+}
+
+.title,
+.body,
+.btn {
+  padding: 4px 8px;
+  width: 100%;
+  min-height: 25px;
+}
+
+.title {
+  text-align: center;
+  color: red;
+  font-style: italic;
+}
+
+.btn {
+  margin-top: 5px;
+  border-radius: 5px;
+  color: red;
+  background: lightblue;
+  border: none;
+}
+
+.time {
+  color: green;
+  font-size: 0.7em;
+  min-height: 10px;
+}

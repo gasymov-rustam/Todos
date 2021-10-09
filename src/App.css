@@ -5,6 +5,12 @@
   background: azure;
   border: 0.5px solid grey;
   border-radius: 15px;
-  height: 900px;
   padding: 16px 32px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  color: orangered;
+  margin-bottom: 30px;
 }

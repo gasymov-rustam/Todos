@@ -2,7 +2,9 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: "http://localhost:1234",
-  headers: { "Content-type": "application/json, charset=utf-8" },
+  headers: {
+    "Content-type": "application/json;charset=utf-8",
+  },
 });
 
 api.interceptors.response.use(
@@ -13,15 +15,12 @@ api.interceptors.response.use(
 export function getTodos() {
   return api.get("/todos");
 }
-
 export function addTodo(newTodo) {
   return api.post("/todos", newTodo);
 }
-
-export function updateTodo(id, updateTodoData) {
-  return api.patch(`/todos/${id}`, updateTodoData);
+export function updateTodo(todoId, updatedTodo) {
+  return api.patch(`/todos/${todoId}`, updatedTodo);
 }
-
-export function deleteTodo(id) {
-  return api.delete(`/todos/${id}`);
+export function deleteTodo(todoId) {
+  return api.delete(`/todos/${todoId}`);
 }
