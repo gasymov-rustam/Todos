@@ -28,6 +28,12 @@ export default function AddTodo() {
     }
   }
 
+  function changeVisibleForm() {
+    setOpen(false);
+    setTitle("");
+    setBody("");
+  }
+
   return (
     <>
       <div className={styles.wrapperBtn}>
@@ -36,7 +42,7 @@ export default function AddTodo() {
         </button>
       </div>
       {open && (
-        <div onClick={() => setOpen(false)} className={styles.containerForm}>
+        <div onClick={changeVisibleForm} className={styles.containerForm}>
           <form
             onSubmit={createNewTodo}
             onClick={(e) => e.stopPropagation()}
