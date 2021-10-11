@@ -24,7 +24,7 @@ export default function Todo({ todo }) {
   }
   return (
     <div className={cn.wrapper}>
-      <h2 className={cn.title}>{todo.title}</h2>
+      <h2 className={cn.title}>sdvsdv{todo.title}</h2>
       <h3 className={cn.body}>{todo.body}</h3>
       <h3>status is: {todo.status}</h3>
       <h4 className={cn.time}>created: {new Date(todo.createdAt).toLocaleString()}</h4>
