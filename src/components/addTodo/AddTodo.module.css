@@ -27,12 +27,11 @@
 .btnForm {
   padding: 8px 48px;
   font-size: 1.2em;
-  width: fit-content;
   align-self: flex-end;
 }
 
 .wrapperBtn {
-  padding-top: 8px;
+  padding: 8px;
   display: flex;
   justify-content: flex-end;
 }
@@ -40,8 +39,16 @@
 .btn {
   border: none;
   padding: 8px 48px;
-  background: #c5f3cc;
-  color: red;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: rgb(17, 0, 255);
+  transition: 0.5s;
+  background: rgb(213, 239, 248);
+  /* color: #172b4d; */
+}
+
+.btn:hover {
+  background: rgb(170, 192, 199);
 }
 
 .containerForm {

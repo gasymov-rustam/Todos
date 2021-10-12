@@ -1,15 +1,18 @@
 .wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   gap: 20px;
   overflow-x: auto;
-  margin-bottom: 20px;
-  /* min-height: 150px; */
+  padding: 0 10px;
 }
 
 .partName {
   font-size: 2.2em;
   text-align: center;
-  color: orangered;
-  margin: 30px;
+  margin: 10px;
+  min-width: fit-content;
+  color: rgb(17, 0, 255);
+  font-weight: 600;
 }

@@ -8,12 +8,10 @@ function Todos({ status }) {
   if (todos.filter((todo) => todo.status === status).length !== 0) {
     return (
       <>
-        {
+        <div className={styles.wrapper}>
           <h2 className={styles.partName}>
             {status === 0 ? "New Tasks" : status === 1 ? "Tasks in Progress" : "Completed Tasks"}
           </h2>
-        }
-        <div className={styles.wrapper}>
           {todos
             .filter((todo) => todo.status === status)
             .map((todo) => (
