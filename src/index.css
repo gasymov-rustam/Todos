@@ -5,8 +5,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: rgb(224, 250, 176); */
-  background: radial-gradient(ellipse at 40% 40%, red, transparent),
-    radial-gradient(ellipse at 60% 60%, blue, transparent);
+  /* background: radial-gradient(ellipse at 40% 40%, red, transparent),
+    radial-gradient(ellipse at 60% 60%, blue, transparent); */
+  background: linear-gradient(62deg, rgb(251, 171, 126), rgb(247, 206, 104));
 }
 
 code {
