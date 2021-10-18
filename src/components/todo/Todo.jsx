@@ -1,26 +1,18 @@
-import { updateTodo } from "../api/todos";
-import { deleteTodo } from "../api/todos";
-import { useTodos } from "../hooks/useTodos";
 import cn from "./Todo.module.css";
-
+import { useTodos } from "../../hooks/useTodos";
+import { updateTodo, deleteTodo } from "../../api/todos";
 export default function Todo({ todo }) {
-  const [, dispatchTodos] = useTodos();
-
+  const [, dispatch] = useTodos();
   async function setNextStatus() {
     const [updatedTodo, updatedTodoError] = await updateTodo(todo.id, {
       status: todo.status + 1,
       updatedAt: Date.now(),
     });
-    if (!updatedTodoError) {
-      dispatchTodos({ type: "NEXT_STATUS", payload: updatedTodo });
-    }
+    if (!updatedTodoError) dispatch({ type: "NEXT_STATUS", payload: updatedTodo });
   }
-
   async function deleteFromTodo() {
-    const [, deleteTodoError] = await deleteTodo(todo.id);
-    if (!deleteTodoError) {
-      dispatchTodos({ type: "DELETE", payload: todo.id });
-    }
+    const [, deletedTodoError] = await deleteTodo(todo.id);
+    if (!deletedTodoError) dispatch({ type: "DELETE", payload: todo.id });
   }
   return (
     <div className={cn.wrapper}>

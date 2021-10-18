@@ -1,8 +1,7 @@
 import "./App.css";
 import Todos from "./components/todos/Todos";
 import AddTodo from "./components/addTodo/AddTodo";
-import { useTodos } from "./components/hooks/useTodos";
-
+import { useTodos } from "./hooks/useTodos";
 function App() {
   const [todos] = useTodos();
   return (

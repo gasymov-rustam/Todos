@@ -1,37 +1,29 @@
 import styles from "./AddTodo.module.css";
+import { useTodos } from "../../hooks/useTodos";
+import { addTodo } from "../../api/todos";
 import { useState } from "react";
-import { addTodo } from "../api/todos";
-import { useTodos } from "../hooks/useTodos";
 
 export default function AddTodo() {
+  const [, dispatch] = useTodos();
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [, dispatchTodos] = useTodos();
-
   async function createNewTodo(e) {
     e.preventDefault();
+    const newTodo = { title, body, status: 0, createdAt: Date.now(), updatedAt: null };
     setOpen(false);
-    const newTodo = {
-      createdAt: Date.now(),
-      title,
-      body,
-      updatedAt: null,
-      status: 0,
-    };
-
     const [createdTodo, createdTodoError] = await addTodo(newTodo);
     if (!createdTodoError) {
-      dispatchTodos({ type: "ADD", payload: createdTodo });
+      dispatch({ type: "ADD", payload: createdTodo });
       setTitle("");
       setBody("");
     }
   }
 
   function changeVisibleForm() {
-    setOpen(false);
     setTitle("");
     setBody("");
+    setOpen(false);
   }
 
   return (
