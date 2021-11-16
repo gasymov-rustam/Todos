@@ -12,7 +12,7 @@ export default function AddTodo() {
     async function createNewTodo(e) {
         e.preventDefault();
         const newTodo = { title, body, status: 0, createdAt: Date.now(), updatedAt: null };
-        setOpen(false);
+        setOpen();
         const [createdTodo, createdTodoError] = await addTodo(newTodo);
         if (!createdTodoError) {
             dispatch({ type: "ADD", payload: createdTodo });
@@ -24,7 +24,7 @@ export default function AddTodo() {
     function changeVisibleForm() {
         setTitle("");
         setBody("");
-        setOpen(false);
+        setOpen();
     }
 
     return (
